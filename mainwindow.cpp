@@ -15,6 +15,7 @@ MainWindow::MainWindow(QWidget *parent) :
     view1->setScene(scene1);
     QGraphicsProxyWidget *pwig = scene1->addWidget(ui->w1_move);
     ui->dockWidgetContents->layout()->addWidget(view1);
+	
 
 }
 
