@@ -6,11 +6,28 @@
 #include <QGraphicsView>
 #include <QGraphicsProxyWidget>
 #include <QGraphicsLinearLayout>
+#include <QLineEdit>
+#include <QListWidget>
 
 
 namespace Ui {
 class MainWindow;
 }
+
+
+class MyGraphicsView : public QGraphicsView
+{
+
+protected:
+
+    void MyGraphicsView::resizeEvent(QResizeEvent *event);
+
+public:
+
+    QWidget* contents;
+
+
+};
 
 class MainWindow : public QMainWindow
 {
@@ -20,11 +37,14 @@ public:
     explicit MainWindow(QWidget *parent = 0);
     ~MainWindow();
 
+private slots:
+    void on_pushButton_clicked();
+
 private:
     Ui::MainWindow *ui;
 
     QGraphicsScene* scene1;
-    QGraphicsView* view1;
+    MyGraphicsView* view1;
 
 
 
