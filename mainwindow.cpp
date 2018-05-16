@@ -19,7 +19,7 @@ MainWindow::MainWindow(QWidget *parent) :
 
     view1->setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
     view1->setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
-
+    ui->listWidget->setEditTriggers(QAbstractItemView::DoubleClicked);
 
 }
 
@@ -55,7 +55,20 @@ void MainWindow::on_pushButton_clicked()
     name_lineedit->setContextMenuPolicy(Qt::NoContextMenu);
     name_lineedit->setText("name");
 
+
+    QSpacerItem* h_spacer = new QSpacerItem(1,13,QSizePolicy::Expanding,QSizePolicy::Minimum);
+
+    QCheckBox* trigger_active = new QCheckBox(list_widget);
+    trigger_active->setMinimumWidth(50);
+    QCheckBox* trigger_visible = new QCheckBox(list_widget);
+    trigger_visible->setMinimumWidth(40);
+
+
     h_layout->addWidget(name_lineedit);
+    h_layout->addItem(h_spacer);
+    h_layout->addWidget(trigger_active);
+    h_layout->addWidget(trigger_visible);
+
 
     int row = ui->listWidget->currentRow()+1;
 

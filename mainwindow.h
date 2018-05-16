@@ -8,6 +8,7 @@
 #include <QGraphicsLinearLayout>
 #include <QLineEdit>
 #include <QListWidget>
+#include <QCheckBox>
 
 
 namespace Ui {
@@ -20,7 +21,7 @@ class MyGraphicsView : public QGraphicsView
 
 protected:
 
-    void MyGraphicsView::resizeEvent(QResizeEvent *event);
+    void resizeEvent(QResizeEvent *event);
 
 public:
 
